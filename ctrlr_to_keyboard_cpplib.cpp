@@ -45,8 +45,11 @@ void get_xbox_input(XINPUT_STATE * _ctr_state) {
 		dwResult = XInputGetState(i, _ctr_state);
 		if (dwResult == ERROR_SUCCESS) {
 			// Controller is connected
-			std::cout << "Xbox Controller Detected " << std::endl;
+			std::cout << "Xbox controller detected " << std::endl;
 			return;
+		}
+		else {
+			std::cout << "No Xbox controller detected..." << std::endl;
 		}
 	}
 	return;
